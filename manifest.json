@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "CarInspect",
+  "version": "1.0",
+  "description": "CarInspection - app for car inspectors.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup":"index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://auto.ria.com/uk/*"
+      ]
+    }
+  ]
+}
