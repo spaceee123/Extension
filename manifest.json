@@ -3,25 +3,38 @@
   "name": "CarInspect",
   "version": "1.0",
   "description": "CarInspection - app for car inspectors.",
-  "background": {
-    "service_worker": "background.js"
-  },
   "action": {
     "default_popup":"index.html"
   },
   "permissions": [
+    "tabs",
     "activeTab",
     "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
+    "webNavigation",
+    "scripting",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback"
   ],
+  "host_permissions": [
+    "https://auto.ria.com/uk/*",
+    "https://login.carinspect.org/*",
+    "https://api.carinspect.org/*",
+    "https://carinspect.org/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "js": [
         "scripts/content.js"
       ],
       "matches": [
-        "https://auto.ria.com/uk/*"
+        "https://auto.ria.com/uk/*",
+        "https://login.carinspect.org/*",
+        "https://api.carinspect.org/*",
+        "https://carinspect.org/"
       ]
     }
   ]
