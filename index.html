@@ -5,18 +5,32 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-<h1>Авторизация</h1>
-<form>
-<!--    <label for="username">E-mail:</label>-->
-<!--    <input type="text" id="username" name="username"><br><br>-->
-<!--    <label for="password">Password:</label>-->
-<!--    <input type="password" id="password" name="password"><br><br>-->
-    <input type="button" id="loginBtn" value="Войти">
-</form>
+<div id="logo">
+<!--    <img src="https://carinspect.org/static/media/icon.c8288e99f3ea96e005e3.png" alt="" width="50">-->
+    <h1 class="logo">CarInspect</h1>
+</div>
+<div id="section_auth" class="section_auth">
+<!--    <h1 class="auth_text">Авторизация</h1>-->
+    <button id="loginBtn">Login</button>
+</div>
+<div id="section_main" class="section_main">
+    <div class="main_info_container">
+        <a class="email_text" href="https://login.carinspect.org/"></a>
+<!--        <img src="" alt="">-->
+        <p>s</p>
+    </div>
+    <div class="main_content">
+        <h2 class="username"></h2>
+        <button id="add-new-unknown-btn"> <img class="icon" src="https://carinspect.org/static/media/icon.c8288e99f3ea96e005e3.png" width="25" alt="nf">Online Inspection</button>
+        <button id="logoutBtn">Logout</button>
+    </div>
+    <a class="about_link" href="https://carinspect.org/about">About</a>
+</div>
 <script src="scripts/content.js"></script>
-<script src="scripts/content.js"></script>
+<script src="scripts/jquery-3.7.0.slim.min.js"></script>
 </body>
 </html>

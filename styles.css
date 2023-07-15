@@ -1,0 +1,93 @@
+h1, h2, h3, h4, p{
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section_auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 200px;
+}
+.auth_text{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#loginBtn{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 21px;
+    padding-left: 21px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #07b74a;
+    cursor: pointer;
+    box-shadow: 2px 3px 3px #006b26;
+    font-size: 18px;
+}
+#section_main{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+}
+#add-new-unknown-btn{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    min-width: 100px;
+    height: 30px;
+    background-color: #07b74a;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    border: none;
+    box-shadow: 2px 3px 3px #006b26;
+}
+.username{
+    margin-right: 10px;
+    margin-left: 10px;
+    word-wrap: break-word;
+    max-width: 200px;
+}
+.main_info_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#logoutBtn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.71);
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 2px 3px 3px #740a13;
+}
+.about_link{
+    background-color: transparent;
+    text-decoration: none;
+    color: grey;
+}

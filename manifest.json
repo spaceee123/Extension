@@ -6,36 +6,99 @@
   "action": {
     "default_popup":"index.html"
   },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
   "permissions": [
     "tabs",
     "activeTab",
-    "webRequest",
-    "webNavigation",
     "scripting",
-    "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess",
-    "declarativeNetRequestFeedback"
+    "storage"
   ],
   "host_permissions": [
-    "https://auto.ria.com/uk/*",
-    "https://login.carinspect.org/*",
-    "https://api.carinspect.org/*",
-    "https://carinspect.org/"
+    "http://*/*",
+    "https://*/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
-    {
-      "js": [
-        "scripts/content.js"
-      ],
-      "matches": [
-        "https://auto.ria.com/uk/*",
-        "https://login.carinspect.org/*",
-        "https://api.carinspect.org/*",
-        "https://carinspect.org/"
-      ]
-    }
+    {"js": ["scripts/content.js", "scripts/jquery-3.7.0.slim.min.js"], "matches": ["<all_urls>"]},
+    {"js": ["scripts/parseScripts/autoria.js"], "matches": ["*://*.auto.ria.com/*"]},
+    {"js": ["scripts/parseScripts/rst.js"], "matches": ["*://*.rst.ua/*"]},
+    {"js": ["scripts/parseScripts/olx.js"], "matches": ["*://*.olx.ua/*"]},
+    {"js": ["scripts/parseScripts/unknown.js"], "matches": ["<all_urls>"]},
+    {"js": ["scripts/parseScripts/otomoto.js"], "matches": ["*://*.otomoto.pl/*"]},
+    {"js": ["scripts/parseScripts/mobilede.js"], "matches": ["*://*.mobile.de/*"]},
+    {"js": ["scripts/parseScripts/autoplius.js"], "matches": ["*://*.autoplius.lt/*"]},
+    {"js": ["scripts/parseScripts/lacentrale.js"], "matches": ["*://*.lacentrale.fr/*"]},
+    {"js": ["scripts/parseScripts/kvd.js"], "matches": ["*://*.kvd.se/*"]},
+    {"js": ["scripts/parseScripts/finn.js"], "matches": ["*://*.finn.no/*"]},
+    {"js": ["scripts/parseScripts/sauto.js"], "matches": ["*://*.sauto.cz/*"]},
+    {"js": ["scripts/parseScripts/auto24.js"], "matches": ["*://*.auto24.lv/*"]},
+    {"js": ["scripts/parseScripts/myauto.js"], "matches": ["*://*.myauto.ge/*"]},
+    {"js": ["scripts/parseScripts/autohelperbot.js"], "matches": ["*://*.autohelperbot.com/*"]},
+    {"js": ["scripts/parseScripts/autoscout24.js"], "matches": [
+      "*://*.autoscout24.com/*",
+      "*://*.autoscout24.de/*",
+      "*://*.autoscout24.be/*",
+      "*://*.autoscout24.es/*",
+      "*://*.autoscout24.fr/*",
+      "*://*.autoscout24.it/*",
+      "*://*.autoscout24.lu/*",
+      "*://*.autoscout24.nl/*",
+      "*://*.autoscout24.at/*",
+      "*://*.autoscout24.bg/*",
+      "*://*.autoscout24.cz/*",
+      "*://*.autoscout24.hr/*",
+      "*://*.autoscout24.pl/*",
+      "*://*.autoscout24.ro/*",
+      "*://*.autoscout24.ru/*",
+      "*://*.autoscout24.hu/*",
+      "*://*.autoscout24.se/*",
+      "*://*.autoscout24.com.tr/*",
+      "*://*.autoscout24.com.ua/*"
+    ]}
+  ],
+  "web_accessible_resources": [
+    {"resources": ["scripts/jquery-3.7.0.slim.min.js" ], "matches": [ "<all_urls>"]},
+    {"resources": ["scripts/parseScripts/autoria.js" ], "matches": [ "*://*.auto.ria.com/*"]},
+    {"resources": ["scripts/parseScripts/rst.js"], "matches": ["*://*.rst.ua/*"]},
+    {"resources": ["scripts/parseScripts/olx.js"], "matches": ["*://*.olx.ua/*"]},
+    {"resources": ["scripts/parseScripts/unknown.js"], "matches": ["<all_urls>"]},
+    {"resources": ["scripts/parseScripts/mobilede.js"], "matches": ["*://*.mobile.de/*"]},
+    {"resources": ["scripts/parseScripts/otomoto.js"], "matches": ["*://*.otomoto.pl/*"]},
+    {"resources": ["scripts/parseScripts/autoplius.js"], "matches": ["*://*.autoplius.lt/*"]},
+    {"resources": ["scripts/parseScripts/lacentrale.js"], "matches": ["*://*.lacentrale.fr/*"]},
+    {"resources": ["scripts/parseScripts/kvd.js"], "matches": ["*://*.kvd.se/*"]},
+    {"resources": ["scripts/parseScripts/finn.js"], "matches": ["*://*.finn.no/*"]},
+    {"resources": ["scripts/parseScripts/sauto.js"], "matches": ["*://*.sauto.cz/*"]},
+    {"resources": ["scripts/parseScripts/auto24.js"], "matches": ["*://*.auto24.lv/*"]},
+    {"resources": ["scripts/parseScripts/myauto.js"], "matches": ["*://*.myauto.ge/*"]},
+    {"resources": ["scripts/parseScripts/autohelperbot.js"], "matches": ["*://*.autohelperbot.com/*"]},
+    {"resources": ["scripts/parseScripts/autoscout24.js"], "matches": [
+      "*://*.autoscout24.com/*",
+      "*://*.autoscout24.de/*",
+      "*://*.autoscout24.be/*",
+      "*://*.autoscout24.es/*",
+      "*://*.autoscout24.fr/*",
+      "*://*.autoscout24.it/*",
+      "*://*.autoscout24.lu/*",
+      "*://*.autoscout24.nl/*",
+      "*://*.autoscout24.at/*",
+      "*://*.autoscout24.bg/*",
+      "*://*.autoscout24.cz/*",
+      "*://*.autoscout24.hr/*",
+      "*://*.autoscout24.pl/*",
+      "*://*.autoscout24.ro/*",
+      "*://*.autoscout24.ru/*",
+      "*://*.autoscout24.hu/*",
+      "*://*.autoscout24.se/*",
+      "*://*.autoscout24.com.tr/*",
+      "*://*.autoscout24.com.ua/*"
+    ]}
   ]
 }
